@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T-shirt prints</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="container header-content">
+        <div class="logo-container">
+            <img src="/photo/77x50.png" alt="T-shirt prints" class="logo">
+            <span class="logo-text">T-shirt prints</span>
+        </div>
+        <div class="contact-info">
+            <p>+48 880-444-275</p>
+            <p>j.travinov@gmail.com</p>
+        </div>
+    </div>
+</header>
+
+<section id="home" class="hero">
+    <div class="container hero-content">
+        <h1>Welcome to the world of unique merch designs!</h1>
+        <p>Explore my works for T-shirt prints and other products.</p>
+        <button onclick="window.location.href='#designs'">View Designs</button>
+    </div>
+</section>
+
+<section id="designs" class="designs">
+    <div class="container">
+        <h2>My Designs</h2>
+        <div class="design-grid">
+            <!-- Example of one design -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/Artificial-intelligence-and-pixels1.png" alt="Design 1" class="design-img">
+                </div>
+            </div>
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/king1.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/T-Shirt.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/55.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/551.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/552.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/stone-animal-design2.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/771.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/772.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/553.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/554.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/555.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/773.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/774.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+
+            <!-- Add other designs here -->
+            <div class="design-card">
+                <div class="design-thumbnail" onclick="openModal(this.querySelector('img').src)">
+                    <img src="/photo/775.png" alt="Design 2" class="design-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal window for enlarged image -->
+<div id="modal" class="modal" onclick="closeModal()">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <img id="modal-img" class="modal-img" src="" alt="Enlarged image">
+</div>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <form id="contactForm" method="POST" action="send_mail.php">
+            <label for="name"></label><input type="text" id="name" name="name" placeholder="Your Name" required>
+            <label for="email"></label><input type="email" id="email" name="email" placeholder="Your Email" required>
+            <label for="message"></label><textarea id="message" name="message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div id="responseMessage" style="display:none; color: green; margin-top: 20px;">Спасибо, форма отправлена</div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Seleva. All rights reserved.</p>
+    </div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
