@@ -63,7 +63,7 @@ header {
 
 /* Главный экран */
 .hero {
-    background: url('photo/77.png') no-repeat center center/cover;
+    background: url('/photo/77x.png') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
