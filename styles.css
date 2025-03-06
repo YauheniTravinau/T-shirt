@@ -468,3 +468,57 @@ footer {
         transform: scale(1.5);
     }
 }
+
+/* Мобильные устройства (до 767px) */
+@media (max-width: 767px) {
+    .music-player {
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 8px;
+    }
+
+    #musicToggle {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .beat {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+/* Плашки планшетов (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .music-player {
+        top: 15px;
+    }
+
+    #musicToggle {
+        padding: 9px 18px;
+        font-size: 1rem;
+    }
+
+    .beat {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+/* Десктопы (от 1025px) */
+@media (min-width: 1025px) {
+    .music-player {
+        top: 15px;
+    }
+
+    #musicToggle {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .beat {
+        width: 8px;
+        height: 8px;
+    }
+}
