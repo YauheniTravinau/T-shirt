@@ -393,3 +393,78 @@ footer {
 #scrollToTopBtn:focus {
     outline: none;
 }
+
+/*музыка*/
+.music-player {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#musicToggle {
+    background: none;  /* Убираем фон */
+    color: #ff6600;     /* Цвет текста */
+    border: 1mm solid transparent;  /* Убираем стандартную обводку */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 15px;  /* Закругленные углы */
+    transition: all 0.3s ease;
+    position: relative;  /* Для создания обводки с закругленными углами */
+    z-index: 1;
+}
+
+#musicToggle::before {
+    content: '';  /* Псевдо-элемент для обводки */
+    position: absolute;
+    top: 0; left: 0;
+    right: 0; bottom: 0;
+    background: none;
+    border: 1mm solid #ff6600;  /* Обводка 1 мм с цветом */
+    border-radius: 15px;  /* Закругленные углы для обводки */
+    z-index: -1;  /* Псевдо-элемент находится позади кнопки */
+}
+
+#musicToggle:hover {
+    color: white;       /* Цвет текста при наведении */
+}
+
+#musicToggle:hover::before {
+    border-color: #e55b00;  /* Цвет обводки при наведении */
+}
+
+.beat-indicator {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.beat {
+    width: 8px;
+    height: 8px;
+    background-color: #ff6600;
+    border-radius: 50%;
+    animation: beatAnimation 1s infinite ease-in-out;
+}
+
+.beat:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+
+.beat:nth-child(even) {
+    animation-delay: 0.4s;
+}
+
+@keyframes beatAnimation {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+}

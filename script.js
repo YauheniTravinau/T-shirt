@@ -44,3 +44,40 @@ mybutton.onclick = function() {
         behavior: "smooth"
     });
 };
+
+/*музыка*/
+document.addEventListener("DOMContentLoaded", function () {
+    const music = document.getElementById("backgroundMusic");
+    const musicToggle = document.getElementById("musicToggle");
+
+    const songs = [
+        "/music/Running In The Night feat. Ollie Wride Album OUT NOW.mp3",
+        "/music/SecondSong.mp3",
+        "/music/ThirdSong.mp3"
+    ];
+    let currentSongIndex = 0;
+
+    // Функция для воспроизведения текущей песни
+    function playSong() {
+        music.src = songs[currentSongIndex];
+        music.play();
+        musicToggle.textContent = "🔇 Stop Music";
+    }
+
+    // Обработчик для кнопки
+    musicToggle.addEventListener("click", function () {
+        if (music.paused) {
+            playSong();
+        } else {
+            music.pause();
+            musicToggle.textContent = "🎵 Play Music";
+        }
+    });
+
+    // Событие окончания текущей песни
+    music.addEventListener("ended", function () {
+        currentSongIndex = (currentSongIndex + 1) % songs.length;  // Переход к следующей песне
+        playSong();
+    });
+});
+
