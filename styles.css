@@ -35,6 +35,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Чтобы плеер располагался относительно хедера */
+    width: 100%;
 }
 
 .logo-container {
@@ -263,11 +265,22 @@ footer {
 @media (max-width: 767px) {
     .header-content {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .logo-container {
-        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+        text-align: center;
     }
 
     .hero h1 {
@@ -297,10 +310,32 @@ footer {
     footer {
         font-size: 0.8rem;
     }
+
+    /* Музыка */
+    .music-player {
+        position: relative;
+        top: auto;
+        transform: none;
+        left: 0;
+        right: 0;
+        margin: 10px auto;
+    }
 }
 
 /* Плашки планшетов (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
+    .logo-container {
+        gap: 20px;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
     .hero h1 {
         font-size: 3rem;
     }
@@ -328,10 +363,32 @@ footer {
     footer {
         font-size: 0.9rem;
     }
+
+    /* Музыка */
+    .music-player {
+        position: relative;
+        top: auto;
+        transform: none;
+        left: 0;
+        right: 0;
+        margin: 10px auto;
+    }
 }
 
 /* Десктопы (от 1025px) */
 @media (min-width: 1025px) {
+    .logo-container {
+        gap: 30px;
+    }
+
+    .logo {
+        height: 70px;
+    }
+
+    .logo-text {
+        font-size: 1.8rem;
+    }
+
     .hero h1 {
         font-size: 4rem;
     }
@@ -359,7 +416,18 @@ footer {
     footer {
         font-size: 1rem;
     }
+
+    /* Музыка */
+    .music-player {
+        position: relative;
+        top: auto;
+        transform: none;
+        left: 0;
+        right: 0;
+        margin: 10px auto;
+    }
 }
+
 
 #scrollToTopBtn {
     position: fixed;
@@ -396,11 +464,6 @@ footer {
 
 /*музыка*/
 .music-player {
-    position: fixed;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -416,7 +479,6 @@ footer {
     border-radius: 15px;  /* Закругленные углы */
     transition: all 0.3s ease;
     position: relative;  /* Для создания обводки с закругленными углами */
-    z-index: 1;
 }
 
 #musicToggle::before {
@@ -427,7 +489,6 @@ footer {
     background: none;
     border: 1mm solid #ff6600;  /* Обводка 1 мм с цветом */
     border-radius: 15px;  /* Закругленные углы для обводки */
-    z-index: -1;  /* Псевдо-элемент находится позади кнопки */
 }
 
 #musicToggle:hover {
@@ -466,59 +527,5 @@ footer {
     }
     50% {
         transform: scale(1.5);
-    }
-}
-
-/* Мобильные устройства (до 767px) */
-@media (max-width: 767px) {
-    .music-player {
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        gap: 8px;
-    }
-
-    #musicToggle {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-
-    .beat {
-        width: 6px;
-        height: 6px;
-    }
-}
-
-/* Плашки планшетов (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .music-player {
-        top: 15px;
-    }
-
-    #musicToggle {
-        padding: 9px 18px;
-        font-size: 1rem;
-    }
-
-    .beat {
-        width: 7px;
-        height: 7px;
-    }
-}
-
-/* Десктопы (от 1025px) */
-@media (min-width: 1025px) {
-    .music-player {
-        top: 15px;
-    }
-
-    #musicToggle {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-
-    .beat {
-        width: 8px;
-        height: 8px;
     }
 }
