@@ -85,24 +85,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+/*хедер скрываем*/
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const headerTab = document.getElementById("header-tab");
 
     let lastScrollY = window.scrollY;
     let isMobile = window.innerWidth <= 767;
-    let hiddenHeight = isMobile ? -250 : -100; // Определяем, насколько прятать хедер
+    let hiddenHeight = isMobile ? -250 : 0; // Скрывать только на мобильных
 
     function checkScroll() {
-        if (window.scrollY > lastScrollY) {
-            // Прокрутка вниз – прячем хедер
-            header.style.top = hiddenHeight + "px";
-            headerTab.style.display = "block";
-        } else {
-            // Прокрутка вверх – показываем хедер
-            header.style.top = "0";
-            headerTab.style.display = "none";
+        if (isMobile) {
+            if (window.scrollY > lastScrollY) {
+                // Прокрутка вниз – прячем хедер
+                header.style.top = hiddenHeight + "px";
+                headerTab.style.display = "block";
+            } else {
+                // Прокрутка вверх – показываем хедер только если в начале страницы
+                if (window.scrollY === 0) {
+                    header.style.top = "0";
+                    headerTab.style.display = "none";
+                }
+            }
         }
+
         lastScrollY = window.scrollY;
     }
 
@@ -117,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("resize", function () {
         isMobile = window.innerWidth <= 767;
-        hiddenHeight = isMobile ? -250 : -100;
+        hiddenHeight = isMobile ? -250 : 0;
     });
 });
 
