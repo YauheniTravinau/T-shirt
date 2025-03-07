@@ -56,10 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
         "/music/morgan wallen - im the problem (ricky retro remix).mp3"
     ];
     let currentSongIndex = 0;
+    let pausedTime = 0; // Переменная для хранения текущего времени при паузе
 
-    // Функция для воспроизведения текущей песни
+    // Функция для воспроизведения текущей песни с сохраненной позиции
     function playSong() {
         music.src = songs[currentSongIndex];
+        music.currentTime = pausedTime; // Устанавливаем сохраненное время
         music.play();
         musicToggle.textContent = "🔇 Stop Music";
     }
@@ -69,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (music.paused) {
             playSong();
         } else {
+            pausedTime = music.currentTime; // Сохраняем время перед паузой
             music.pause();
             musicToggle.textContent = "🎵 Play Music";
         }
@@ -77,7 +80,44 @@ document.addEventListener("DOMContentLoaded", function () {
     // Событие окончания текущей песни
     music.addEventListener("ended", function () {
         currentSongIndex = (currentSongIndex + 1) % songs.length;  // Переход к следующей песне
+        pausedTime = 0; // Сбрасываем позицию при переходе к новой песне
         playSong();
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector("header");
+    const headerTab = document.getElementById("header-tab");
+
+    let lastScrollY = window.scrollY;
+    let isMobile = window.innerWidth <= 767;
+    let hiddenHeight = isMobile ? -250 : -100; // Определяем, насколько прятать хедер
+
+    function checkScroll() {
+        if (window.scrollY > lastScrollY) {
+            // Прокрутка вниз – прячем хедер
+            header.style.top = hiddenHeight + "px";
+            headerTab.style.display = "block";
+        } else {
+            // Прокрутка вверх – показываем хедер
+            header.style.top = "0";
+            headerTab.style.display = "none";
+        }
+        lastScrollY = window.scrollY;
+    }
+
+    window.addEventListener("scroll", function () {
+        checkScroll();
+    });
+
+    headerTab.addEventListener("click", function () {
+        header.style.top = "0";
+        headerTab.style.display = "none";
+    });
+
+    window.addEventListener("resize", function () {
+        isMobile = window.innerWidth <= 767;
+        hiddenHeight = isMobile ? -250 : -100;
     });
 });
 

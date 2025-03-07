@@ -529,3 +529,22 @@ footer {
         transform: scale(1.5);
     }
 }
+
+header {
+    transition: top 0.3s ease-in-out;
+}
+
+#header-tab {
+    position: fixed;
+    top: 0;
+    left: 5%;
+    transform: translateX(-50%);
+    background: #ff6600;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: none; /* Скрыто по умолчанию */
+    z-index: 20;
+}
