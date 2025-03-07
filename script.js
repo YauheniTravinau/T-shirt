@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const songs = [
         "/music/Running In The Night feat. Ollie Wride Album OUT NOW.mp3",
-        "/music/SecondSong.mp3",
-        "/music/ThirdSong.mp3"
+        "/music/Bend & Break (feat. Ollie Wride).mp3",
+        "/music/morgan wallen - im the problem (ricky retro remix).mp3"
     ];
     let currentSongIndex = 0;
 
