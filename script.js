@@ -127,3 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+/*высота блока с текстом после хедера авто изменение*/
+window.addEventListener("resize", function() {
+    let headerHeight = document.querySelector("header").offsetHeight;
+    document.querySelector(".hero").style.paddingTop = headerHeight + "px";
+});

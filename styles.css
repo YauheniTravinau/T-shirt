@@ -283,6 +283,10 @@ footer {
         text-align: center;
     }
 
+    .hero {
+        padding-top: 100px; /* или другая высота хедера */
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
